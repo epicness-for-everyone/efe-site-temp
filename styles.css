@@ -1,0 +1,451 @@
+:root {
+  --color-red: #ff8080;
+  --color-orange: #ffb380;
+  --color-yellow: #ffe680;
+  --color-green: #b3ff99;
+  --color-blue: #99ccff;
+  --color-dark: #222;
+  --color-light: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: center; /* Center the navigation */
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center; /* Center the nav items */
+}
+
+nav ul li {
+  margin: 0 15px; /* Equal margin on both sides for better centered appearance */
+}
+
+nav ul li a {
+  color: var(--color-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--color-red);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #444 100%);
+  color: var(--color-light);
+  padding: 150px 0 80px;
+  text-align: center;
+}
+
+/* Add styles for the logo in the hero section */
+.hero-logo {
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    to right,
+    var(--color-red),
+    var(--color-orange),
+    var(--color-yellow),
+    var(--color-green),
+    var(--color-blue)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: var(--color-light);
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--color-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-red);
+}
+
+.about {
+  background-color: var(--color-light);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.games {
+  background-color: #f9f9f9;
+}
+
+.game-card {
+  background-color: var(--color-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+}
+
+.game-image {
+  width: 100%;
+  height: 300px;
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-red),
+    var(--color-orange),
+    var(--color-yellow),
+    var(--color-green),
+    var(--color-blue)
+  );
+  opacity: 0.3;
+}
+
+.game-details {
+  padding: 30px;
+}
+
+.game-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+
+.game-details p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.team {
+  background-color: var(--color-light);
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
+  background-color: var(--color-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.member-image {
+  width: 100%;
+  height: 250px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.member-1 .member-image {
+  background-color: var(--color-red);
+}
+.member-2 .member-image {
+  background-color: var(--color-orange);
+}
+.member-3 .member-image {
+  background-color: var(--color-yellow);
+}
+.member-4 .member-image {
+  background-color: var(--color-green);
+}
+
+.member-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.member-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.member-details span {
+  color: #666;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.contact {
+  background-color: #f9f9f9;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.contact-info {
+  background-color: var(--color-light);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-form {
+  background-color: var(--color-light);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--color-blue);
+  outline: none;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--color-light);
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--color-red);
+}
+
+.copyright {
+  margin-top: 20px;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 20px;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  .hero {
+    padding: 180px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 5px 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
